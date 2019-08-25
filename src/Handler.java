@@ -6,6 +6,7 @@ public class Handler extends MouseAdapter {
     //Randomizers
     private Random rand;
     private int randomNo;
+    private double result;
 
     //Handler things
     public boolean mouseIsPressed = false;
@@ -39,11 +40,15 @@ public class Handler extends MouseAdapter {
 //        timeBetweenClicks = timePressed - timeLastPress;
 //        System.out.println("gap: "+timeBetweenClicks);
         if(test.green) {
-            System.out.println("Time to react: " + (timePressed - timeRed - getRandomNo()));
+            result = timePressed - timeRed - getRandomNo();
+            System.out.println("Time to react: " + result);
             timeRed = timePressed;
-            randomizer();
             //System.out.println("random no: " + getRandomNo());
             test.green = false;
+            test.result = true;
+        } else if (test.result) {
+            randomizer();
+            test.result = false;
             test.red = true;
         } else if(test.begin) {
             randomizer();
@@ -69,4 +74,6 @@ public class Handler extends MouseAdapter {
     public int getRandomNo() {
         return randomNo;
     }
+
+    public double getResult() { return result; }
 }

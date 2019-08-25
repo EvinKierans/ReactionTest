@@ -18,6 +18,7 @@ public class Test extends Canvas implements Runnable {
     boolean red = false;
     boolean green = false;
     boolean tooSoon = false;
+    boolean result = false;
     boolean begin = true;
 
     public Test() {
@@ -113,9 +114,13 @@ public class Test extends Canvas implements Runnable {
         } else if(begin) {
             g.setColor(Color.green);
             g.drawString("Click the screen to begin the test", WIDTH/4 + WIDTH/16, HEIGHT/2);
+            g.drawString("Click the screen when the rectangle turns green", WIDTH/4, HEIGHT/3+HEIGHT/3);
         } else if(tooSoon) {
             g.setColor(Color.green);
             g.drawString("Too Soon! Please click to begin again", WIDTH/4 + WIDTH/16, HEIGHT/2);
+        } else if(result) {
+            g.setColor(Color.green);
+            g.drawString("You Reacted in: " + handler.getResult(), WIDTH/4 + WIDTH/8, HEIGHT/2);
         }
 
         g.dispose();
