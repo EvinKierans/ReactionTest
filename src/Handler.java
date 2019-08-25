@@ -41,7 +41,6 @@ public class Handler extends MouseAdapter {
 //        System.out.println("gap: "+timeBetweenClicks);
         if(test.green) {
             result = timePressed - timeRed - getRandomNo();
-            System.out.println("Time to react: " + result);
             timeRed = timePressed;
             //System.out.println("random no: " + getRandomNo());
             test.green = false;
