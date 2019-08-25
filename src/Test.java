@@ -45,7 +45,7 @@ public class Test extends Canvas implements Runnable {
     //Runs the game
     public void run() {
         long lastTime = System.nanoTime();
-        double amountOfTicks = 1000.0;
+        double amountOfTicks = 10000.0;
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         long timer = System.currentTimeMillis();
