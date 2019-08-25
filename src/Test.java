@@ -12,6 +12,7 @@ public class Test extends Canvas implements Runnable {
     private Thread thread;
     private int fps;
     private boolean running = false;
+    private double timeNow;
 
     //State Booleans
     boolean red = false;
@@ -74,6 +75,15 @@ public class Test extends Canvas implements Runnable {
     //Tick happens X amount of times per second - defined in run()
     public void tick() {
 
+        timeNow = System.currentTimeMillis();
+
+        if(red) {
+            //if length of time it's been red; is more than the time between (the click and the random number)
+            if(timeNow - handler.getRandomNo() >= handler.timeRed) {
+                red = false;
+                green = true;
+            }
+        }
     }
 
     //Render loads everything onto the screen

@@ -12,13 +12,12 @@ public class Handler extends MouseAdapter {
     private Test test;
 
     //Timer Things
-    private double timeTaken;
-    private double timeRed;
-    private double timeGreen;
-    private double timeNow;
-    private double timePressed = 0;
-    private double timeLastPress;
-    private double timeBetweenClicks;
+    double timeTaken;
+    double timeRed;
+    double timeGreen;
+    double timePressed = System.currentTimeMillis();
+    double timeLastPress;
+    double timeBetweenClicks;
 
     public Handler(Test test) {
         this.test = test;
@@ -34,18 +33,27 @@ public class Handler extends MouseAdapter {
     //Mouse input functions
     public void mousePressed(MouseEvent e) {
         mouseIsPressed = true;
-        randomizer();
         timeLastPress = timePressed;
         timePressed = System.currentTimeMillis();
-        timeBetweenClicks = timePressed - timeLastPress;
-        System.out.println(timeBetweenClicks);
+        //checks time between clicks - may use in future
+//        timeBetweenClicks = timePressed - timeLastPress;
+//        System.out.println("gap: "+timeBetweenClicks);
         if(test.green) {
+            System.out.println("Time to react: " + (timePressed - timeRed - getRandomNo()));
+            timeRed = timePressed;
+            randomizer();
+            //System.out.println("random no: " + getRandomNo());
             test.green = false;
             test.red = true;
         } else if(test.begin) {
+            randomizer();
+            //System.out.println("random no: " + getRandomNo());
+            timeRed = timePressed;
             test.begin = false;
             test.red = true;
         } else if(test.tooSoon) {
+            randomizer();
+            timeRed = timePressed;
             test.tooSoon = false;
             test.red = true;
         } else if (test.red) {
