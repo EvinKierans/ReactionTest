@@ -107,10 +107,10 @@ public class Test extends Canvas implements Runnable {
         //Game logic rendering
         if(green) {
             g.setColor(Color.green);
-            g.fillRect(WIDTH/4 + WIDTH/8, HEIGHT/4 + HEIGHT/8, WIDTH/4, HEIGHT/4);
+            g.fillRect(0, 0, WIDTH, HEIGHT);
         } else if(red) {
             g.setColor(Color.red);
-            g.fillRect(WIDTH/4 + WIDTH/8, HEIGHT/4 + HEIGHT/8, WIDTH/4, HEIGHT/4);
+            g.fillRect(0, 0, WIDTH, HEIGHT);
         } else if(begin) {
             g.setColor(Color.green);
             g.drawString("Click the screen to begin the test", WIDTH/4 + WIDTH/16, HEIGHT/2);
