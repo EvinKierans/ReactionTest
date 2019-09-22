@@ -27,7 +27,7 @@ public class Handler extends MouseAdapter {
     }
 
     public void randomizer() {
-        randomNo = rand.nextInt(4000) + 1000;
+        randomNo = rand.nextInt(4000) + 2000;
         //System.out.println("random = " + randomNo);
     }
 
@@ -45,6 +45,7 @@ public class Handler extends MouseAdapter {
             //System.out.println("random no: " + getRandomNo());
             test.green = false;
             test.result = true;
+            System.out.println(getResult());
         } else if (test.result) {
             randomizer();
             test.result = false;
