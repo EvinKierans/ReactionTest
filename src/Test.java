@@ -114,7 +114,7 @@ public class Test extends Canvas implements Runnable {
         } else if(begin) {
             g.setColor(Color.green);
             g.drawString("Click the screen to begin the test", WIDTH/4 + WIDTH/16, HEIGHT/2);
-            g.drawString("Click the screen when the rectangle turns green", WIDTH/4, HEIGHT/3+HEIGHT/3);
+            g.drawString("Click the screen when the screen turns green", WIDTH/4, HEIGHT/3+HEIGHT/3);
         } else if(tooSoon) {
             g.setColor(Color.green);
             g.drawString("Too Soon! Please click to begin again", WIDTH/4 + WIDTH/16, HEIGHT/2);
