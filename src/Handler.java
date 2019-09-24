@@ -75,5 +75,5 @@ public class Handler extends MouseAdapter {
         return randomNo;
     }
 
-    public double getResult() { return result; }
+    public int getResult() { return (int) result; }
 }
